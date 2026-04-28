@@ -405,6 +405,30 @@
     .mute-btn:hover { background: rgba(255,235,0,0.18); }
     .mute-btn.muted { color: #ff5252; border-color: #ff5252; }
     .mute-btn.muted:hover { background: rgba(255,82,82,0.18); }
+
+    .screen-nav {
+      position: fixed;
+      bottom: 96px;
+      left: 18px;
+      z-index: 1000;
+      display: flex;
+      gap: 6px;
+      background: rgba(0,0,0,0.85);
+      padding: 6px;
+      border: 2px solid #ffeb00;
+      font-family: 'Courier New', 'Liberation Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+    .screen-nav a {
+      display: block;
+      padding: 6px 10px;
+      color: #ffeb00;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .screen-nav a.active { background: #ffeb00; color: #000; }
+    .screen-nav a:hover:not(.active) { background: rgba(255,235,0,0.18); }
   </style>
 </head>
 <body>
@@ -473,6 +497,11 @@
   <audio id="alarm" src="eas-alarm.mp3" preload="auto" loop></audio>
 
   <button class="mute-btn" id="muteBtn" type="button">[ AUDIO ON ]</button>
+
+  <nav class="screen-nav">
+    <a href="index.html" class="active">[ EAS ]</a>
+    <a href="aqi.html">[ AQI ]</a>
+  </nav>
 
   <script>
     // ============ MAPBOX TOKEN — PASTE YOURS HERE ============
